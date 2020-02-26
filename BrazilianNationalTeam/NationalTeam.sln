@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrazilianNationalTeam.WebApi", "BrazilianNationalTeam.WebApi\BrazilianNationalTeam.WebApi.csproj", "{D3FB5103-5D54-47D0-85EA-E5F0EC793B2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NationalTeam.WebApi", "NationalTeam.WebApi\NationalTeam.WebApi.csproj", "{D3FB5103-5D54-47D0-85EA-E5F0EC793B2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrazilianNationalTeam.Mvc", "BrazilianNationalTeam.Mvc\BrazilianNationalTeam.Mvc.csproj", "{7F11EF66-7B36-4B61-B27B-27BE445D0276}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NationalTeam.Mvc", "NationalTeam.Mvc\NationalTeam.Mvc.csproj", "{7F11EF66-7B36-4B61-B27B-27BE445D0276}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrazilianNationalTeam.Models", "BrazilianNationalTeam.Models\BrazilianNationalTeam.Models.csproj", "{21B82A44-F47A-472C-82FB-C18E08932E99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NationalTeam.Models", "NationalTeam.Models\NationalTeam.Models.csproj", "{21B82A44-F47A-472C-82FB-C18E08932E99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BNT.Repositories", "BNT.Repositories\BNT.Repositories.csproj", "{09D27FBB-D4AD-4FFF-B0B7-3A4DC832AC1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NationalTeam.Repositories", "NationalTeam.Repositories\NationalTeam.Repositories.csproj", "{09D27FBB-D4AD-4FFF-B0B7-3A4DC832AC1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

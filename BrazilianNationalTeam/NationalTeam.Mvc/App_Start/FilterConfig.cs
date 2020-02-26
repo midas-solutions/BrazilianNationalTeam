@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace BrazilianNationalTeam.Mvc
+namespace NationalTeam.Mvc
 {
     public class FilterConfig
     {

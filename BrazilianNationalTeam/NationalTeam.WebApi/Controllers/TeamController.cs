@@ -1,9 +1,9 @@
-﻿using BrazilianNationalTeam.Models;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
+using NationalTeam.Models;
 
-namespace BrazilianNationalTeam.WebApi.Controllers
+namespace NationalTeam.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

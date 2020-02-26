@@ -1,4 +1,4 @@
-﻿namespace BrazilianNationalTeam.Models
+﻿namespace NationalTeam.Models
 {
     public class Player
     {

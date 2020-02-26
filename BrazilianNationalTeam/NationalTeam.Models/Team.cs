@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BrazilianNationalTeam.Models
+namespace NationalTeam.Models
 {
     public class Team
     {

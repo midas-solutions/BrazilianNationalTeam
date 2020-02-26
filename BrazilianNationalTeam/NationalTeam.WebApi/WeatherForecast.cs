@@ -1,6 +1,6 @@
 using System;
 
-namespace BrazilianNationalTeam.WebApi
+namespace NationalTeam.WebApi
 {
     public class WeatherForecast
     {

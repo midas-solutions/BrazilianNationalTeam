@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BrazilianNationalTeam.Models\BrazilianNationalTeam.Models.csproj" />
+    <ProjectReference Include="..\NationalTeam.Models\NationalTeam.Models.csproj" />
   </ItemGroup>
 
 

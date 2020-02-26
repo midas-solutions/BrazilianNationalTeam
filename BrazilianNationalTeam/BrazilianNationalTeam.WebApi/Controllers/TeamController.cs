@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BrazilianNationalTeam.WebApi.Models;
+﻿using BrazilianNationalTeam.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace BrazilianNationalTeam.WebApi.Controllers
 {

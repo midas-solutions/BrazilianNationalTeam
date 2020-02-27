@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NationalTeam.Repositories;
+using NationalTeam.Repositories.Interfaces;
 
 namespace NationalTeam.WebApi
 {
@@ -19,6 +21,7 @@ namespace NationalTeam.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<ITeamRepository, TeamRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -4,6 +4,8 @@ using System.Threading;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NationalTeam.Models;
+using NationalTeam.Repositories;
+using NationalTeam.Repositories.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -13,29 +15,21 @@ namespace NationalTeam.WebApi.Controllers
     //[Route("[controller]")]
     public class TeamController : ControllerBase
     {
-        private readonly List<Team> _teams;
-
         private readonly ILogger<TeamController> _logger;
 
-        public TeamController(ILogger<TeamController> logger)
+        private readonly IRepository<Team> _teamRepository;
+
+        public TeamController(ILogger<TeamController> logger, ITeamRepository repository)
         {
             _logger = logger;
-            _teams = new List<Team>();
-            // TODO: melhorar essa parte, criar classe repositorio etc...
-            var brazilianTeam = new Team();
-            brazilianTeam.Name = "Seleção Brasileira";
-            brazilianTeam.Players.Add(new Player
-            {
-                Name = "Tafarel"
-            });
-            _teams.Add(brazilianTeam);
+            _teamRepository = repository;
         }
 
         [Route("api/[controller]/getTeams")]
         [HttpGet]
         public List<Team> Get()
         {
-            return _teams;
+            return _teamRepository.GetAll();
         }
 
         [Route("api/[controller]/teste")]

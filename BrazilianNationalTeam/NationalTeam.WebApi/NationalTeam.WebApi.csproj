@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NationalTeam.Models\NationalTeam.Models.csproj" />
+    <ProjectReference Include="..\NationalTeam.Repositories\NationalTeam.Repositories.csproj" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

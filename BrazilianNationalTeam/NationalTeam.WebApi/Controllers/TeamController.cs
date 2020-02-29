@@ -25,6 +25,13 @@ namespace NationalTeam.WebApi.Controllers
             _teamRepository = repository;
         }
 
+        [Route("api/[controller]/testeJson")]
+        [HttpGet]
+        public string TesteJson()
+        {
+            return "SPFC É O TIME DA VIRADA!! VAI JASON!";
+        }
+
         [Route("api/[controller]/getTeams")]
         [HttpGet]
         public List<Team> Get()

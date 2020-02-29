@@ -25,6 +25,13 @@ namespace NationalTeam.WebApi.Controllers
             _teamRepository = repository;
         }
 
+        [Route("api/[controller]/vaimatheus")]
+        [HttpGet]
+        public string vaimatheus()
+        {
+            return "Matheus";
+        }
+
         [Route("api/[controller]/getTeams")]
         [HttpGet]
         public List<Team> Get()

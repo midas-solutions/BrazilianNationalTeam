@@ -39,6 +39,14 @@ namespace NationalTeam.WebApi.Controllers
             return "Vai Brasil!!!!";
         }
 
+        [Route("api/[controller]/meuqueridotestejson")]
+        [HttpGet]
+        public string MeuQueridoTesteJson()
+        {
+            return "Teste metodo API";
+        }
+
+
         [Route("api/[controller]/testeselenium")]
         [HttpGet]
         public string TesteSelenium()

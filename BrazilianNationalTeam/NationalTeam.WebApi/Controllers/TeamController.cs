@@ -16,7 +16,7 @@ namespace NationalTeam.WebApi.Controllers
     public class TeamController : ControllerBase
     {
         private readonly ILogger<TeamController> _logger;
-        
+
         private readonly IRepository<Team> _teamRepository;
 
         public TeamController(ILogger<TeamController> logger, ITeamRepository repository)
@@ -30,14 +30,6 @@ namespace NationalTeam.WebApi.Controllers
         public List<Team> Get()
         {
             return _teamRepository.GetAll();
-
-        }
-
-        [Route("api/[controller]/meuqueridotestejson")]
-        [HttpGet]
-        public string MeuQueridoTesteJson()
-        {
-            return "vai matheus";
         }
 
         [Route("api/[controller]/teste")]

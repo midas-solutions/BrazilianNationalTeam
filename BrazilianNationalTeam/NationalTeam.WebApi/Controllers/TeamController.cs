@@ -32,6 +32,13 @@ namespace NationalTeam.WebApi.Controllers
             return _teamRepository.GetAll();
         }
 
+        [Route("api/[controller]/meuqueridotesteJson")]
+        [HttpGet]
+        public string MeuQueridoTesteJson()
+        {
+            return "Vai Cleiton";
+        }
+
         [Route("api/[controller]/teste")]
         [HttpGet]
         public string Teste()

@@ -7,14 +7,23 @@ namespace NationalTeam.Repositories
 {
     public class TeamRepository : ITeamRepository
     {
+        public static List<Team> Teams { get; set; }
+
+        public TeamRepository()
+        {
+            Teams = new List<Team>();
+        }
+
         public List<Team> GetAll()
         {
-            throw new NotImplementedException();
+            return Teams;
         }
 
         public bool Insert(Team team)
         {
-            throw new NotImplementedException();
+            bool success = true;
+            Teams.Add(team);
+            return success;
         }
     }
 }

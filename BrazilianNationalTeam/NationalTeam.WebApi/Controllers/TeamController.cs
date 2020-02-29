@@ -89,14 +89,21 @@ namespace NationalTeam.WebApi.Controllers
             return "Navegação Ok";
         }
 
+        [Route("api/[controller]/getAll")]
+        [HttpGet]
+        public List<Team> GetAll()
+        {
+            return _teamRepository.GetAll();
+        }
+
         [Route("api/[controller]/pegatimeano")]
-        [HttpPost]
-        public string PegaTimeAno([FromBody]RequisicaoTimeAno param)
+        [HttpGet]
+        public string PegaTimeAno()
         {
             var chromeOpt = new ChromeOptions();
             chromeOpt.AddArguments("--incognito");
             chromeOpt.AddArguments("--start-maximized");
-            //chromeOpt.AddArguments("--headless");
+            chromeOpt.AddArguments("--headless");
 
             var driver = new ChromeDriver(chromeOpt);
             
@@ -113,31 +120,35 @@ namespace NationalTeam.WebApi.Controllers
                 {
                     for (var j = 1; j < 6; j++)
                     {
+                        Team team = new Team();
                         try
                         {
                             driver.Navigate().GoToUrl(url);
-
                             link = driver.FindElement(By.XPath($"/html/body/table[2]/tbody/tr[{i}]/td[{j}]/a")).GetAttribute("href");
                             text = driver.FindElement(By.XPath($"/html/body/table[2]/tbody/tr[{i}]/td[{j}]")).Text;
 
                             driver.Navigate().GoToUrl(link);
 
-                            var team = driver.FindElement(By.XPath($"/html/body/table[1]/tbody/tr[3]/td/table/tbody/tr/td[1]/p[1]")).Text;
-
-                            var teamList = team.Split('\n');
-
+                            var teamName = driver.FindElement(By.XPath($"/html/body/table[1]/tbody/tr[3]/td/table/tbody/tr/td[1]/p[1]")).Text;
+                            
+                            var teamList = teamName.Split('\n');
+                            team.Name = "Seleção Brasileira de " + text;
                             Console.WriteLine($"Link: {link} Texto: {text}");
 
 
-                            foreach (var player in teamList)
+                            foreach (var playerName in teamList)
                             {
-                                Console.WriteLine($"Jogador: {player}");
+                                Player player = new Player();
+                                player.Name = playerName;
+                                Console.WriteLine($"Jogador: {playerName}");
+                                team.Players.Add(player);
                             }
                         }
                         catch 
                         {
                             Console.WriteLine("Sem Informação");
                         }
+                        _teamRepository.Insert(team);
                     }
                 }
             }
@@ -150,7 +161,7 @@ namespace NationalTeam.WebApi.Controllers
                 driver?.Quit();
             }
 
-            return JsonConvert.SerializeObject(param);
+            return JsonConvert.SerializeObject("");
         }
     }
 }

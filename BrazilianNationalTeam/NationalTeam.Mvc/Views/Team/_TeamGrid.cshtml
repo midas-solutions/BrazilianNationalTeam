@@ -1,0 +1,15 @@
+﻿@using NationalTeam.Mvc.Models;
+@model List<Team>
+
+<table class="table">
+    <thead>
+    <td>Nome</td>
+    </thead>
+    @foreach (var item in Model)
+    {
+        if (!string.IsNullOrEmpty(item.Name))
+        {
+            <tr><td>@item.Name</td></tr>
+        }
+    }
+</table>

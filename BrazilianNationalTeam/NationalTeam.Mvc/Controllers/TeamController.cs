@@ -9,12 +9,11 @@ namespace NationalTeam.Mvc.Controllers
         // GET: Team
         public ActionResult Index()
         {
-            ViewData["Hora"] = DateTime.Now;
-            ViewBag.Hora = DateTime.Now;
-            TempData["Hora"] = DateTime.Now;
             TeamClient client = new TeamClient();
             var result = client.GetAll();
             return View(result);
         }
     }
+
+
 }

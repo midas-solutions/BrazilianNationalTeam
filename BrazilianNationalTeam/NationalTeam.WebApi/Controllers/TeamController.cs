@@ -132,6 +132,7 @@ namespace NationalTeam.WebApi.Controllers
                             var teamName = driver.FindElement(By.XPath($"/html/body/table[1]/tbody/tr[3]/td/table/tbody/tr/td[1]/p[1]")).Text;
                             
                             var teamList = teamName.Split('\n');
+
                             team.Name = "Seleção Brasileira de " + text;
                             Console.WriteLine($"Link: {link} Texto: {text}");
 

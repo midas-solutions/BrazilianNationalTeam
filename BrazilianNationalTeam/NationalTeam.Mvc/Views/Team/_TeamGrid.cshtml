@@ -1,15 +1,40 @@
 ﻿@using NationalTeam.Mvc.Models;
 @model List<Team>
 
-<table class="table">
-    <thead>
-    <td>Nome</td>
-    </thead>
-    @foreach (var item in Model)
-    {
-        if (!string.IsNullOrEmpty(item.Name))
+    <table class="table">
+        <thead>
+        <td>Nome</td>
+        </thead>
+        @foreach (var item in Model)
         {
-            <tr><td>@item.Name</td></tr>
+            if (!string.IsNullOrEmpty(item.Name))
+            {
+                if (item.Name == "Seleção Brasileira de 2014-2015")
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>
+
+                         <img src="https://blogdovalente.com.br/wp-content/uploads/2019/05/davidluiz.jpg" />
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>
+
+                            @foreach (var jogador in item.Players)
+                            {
+                                if (!string.IsNullOrEmpty(jogador.Name))
+                                {
+                                    @jogador.Name <br />
+                                }
+                            }
+                        </td>
+                    </tr>
+                }
+            }
         }
-    }
-</table>
+    </table>

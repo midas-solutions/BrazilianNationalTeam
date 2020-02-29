@@ -9,7 +9,11 @@
     {
         if (!string.IsNullOrEmpty(item.Name))
         {
-            <tr><td>@item.Name</td></tr>
+            <tr><td><strong>@item.Name</strong></td></tr>
+            foreach (var player in item.Players)
+            {
+                <tr><td>@player.Name</td></tr>
+            }
         }
     }
 </table>

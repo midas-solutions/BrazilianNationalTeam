@@ -40,8 +40,6 @@ namespace NationalTeam.WebApi.Controllers
             return "Midas Solutions!!";
         }
 
-
-
         [Route("api/[controller]/teste")]
         [HttpGet]
         public string Teste()
